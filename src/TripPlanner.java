@@ -4,12 +4,22 @@ import java.util.Scanner;
 public class TripPlanner {
 
 
-    public static void main(String [] args) {}
+    public static void main(String [] args) {
+        intro();
+    }
 
     public static void intro() {
-        Scanner input = new Scanner(System.in);
         // takes in user name and destination
 
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to the Trip Planner!");
+        System.out.print("What is your name? ");
+        String name = "";
+        name += input.nextLine();
+        System.out.print("Nice to meet you " + name + ", where are you travelling to? ");
+        String destination = "";
+        destination += input.nextLine();
+        System.out.println("Great! " + destination + " sounds like a great trip");
     }
 
     public static void budget() {
