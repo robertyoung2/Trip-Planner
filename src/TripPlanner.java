@@ -4,9 +4,9 @@ import java.lang.Math;
 public class TripPlanner {
 
     public static void main(String [] args) {
-//        intro();
-//        budget();
-//        time();
+        intro();
+        budget();
+        time();
         distance();
     }
 
