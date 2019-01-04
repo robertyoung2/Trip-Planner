@@ -8,6 +8,7 @@ public class TripPlanner {
         budget();
         time();
         distance();
+        measured_distance();
     }
 
     // takes in user name and destination
@@ -90,6 +91,36 @@ public class TripPlanner {
 
         System.out.println("**********");
         System.out.println();
+
+    }
+
+    // Method to calculate distance between two locations
+    public static void measured_distance() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the longitude of your starting location? ");
+        double start_long = input.nextDouble();
+        System.out.print("what is the latitude of your starting location? ");
+        double start_lat = input.nextDouble();
+        System.out.print("What is the longitude of your final destination? ");
+        double final_long = input.nextDouble();
+        System.out.print("what is the latitude of your final destination? ");
+        double final_lat = input.nextDouble();
+
+        double R = 6378137;
+
+        double lat_1 =  Math.toRadians(start_lat);
+        double lat_2 =  Math.toRadians(final_lat);
+        double lat_diff = Math.toRadians(final_lat - start_lat);
+        double long_diff = Math.toRadians(final_long - start_long);
+
+        double a = Math.sin(lat_diff/2) * Math.sin(lat_diff/2) + Math.cos(lat_1) * Math.cos(lat_2) * Math.sin(long_diff
+        /2) * Math.sin(long_diff/2);
+
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+        var distance = R * c;
+
+        System.out.print(distance);
 
     }
 }
