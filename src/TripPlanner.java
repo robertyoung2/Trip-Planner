@@ -4,9 +4,10 @@ import java.lang.Math;
 public class TripPlanner {
 
     public static void main(String [] args) {
-        intro();
-        budget();
-        time();
+//        intro();
+//        budget();
+//        time();
+        distance();
     }
 
     // takes in user name and destination
@@ -51,7 +52,7 @@ public class TripPlanner {
         System.out.println("If you are travelling for " + travel_days + " days that is the same as " + hours + " hours or " +
                 minutes + " minutes");
         System.out.println("If you are going to spend €" + budget + " that means per day you can spend up to €" +
-                db_round + "EUR" );
+                db_round + " EUR" );
         System.out.println("Your total budget in " + symbol + " is " + local_budget + " " + symbol + ", which per day " +
                 "is " + dl_round + " " + symbol);
 
@@ -77,12 +78,18 @@ public class TripPlanner {
 
     }
 
-
+    // takes in distance between home and destination in square kilometeres
+    // converts into square mile
+    // kilometers*0.62137 = miles
     public static void distance() {
         Scanner input = new Scanner(System.in);
-        // takes in distance between home and destination in square kilometeres
-        // converts into square mile
+        System.out.print("What is the square area of your destination country in km2? ");
+        int area_km = input.nextInt();
+        double area_miles = area_km * 0.38610;
+        System.out.println("In miles squared that is: " + area_miles);
 
-        // kilometers*0.62137 = miles
+        System.out.println("**********");
+        System.out.println();
+
     }
 }
