@@ -3,11 +3,10 @@ import java.lang.Math;
 
 public class TripPlanner {
 
-
-
     public static void main(String [] args) {
         intro();
         budget();
+        time();
     }
 
     // takes in user name and destination
@@ -59,17 +58,23 @@ public class TripPlanner {
         System.out.println("**********");
         System.out.println();
 
-
-
-
-
-
-
     }
 
+    // takes in the time difference between home and destination
     public static void time() {
         Scanner input = new Scanner(System.in);
-        // takes in the time difference between home and destination
+        System.out.print("What is the time difference, in hours, between your home and your destination? ");
+        int time_diff = input.nextInt();
+        int diff_corrected = time_diff % 24;
+        int midnight = Math.abs(diff_corrected);
+        int noon = Math.abs(diff_corrected + 12);
+
+        System.out.println("That means that when it is midnight at home it will be " + midnight + ":00" + " in your travel destination " +
+                "and when it is noon at home it will be " + noon + ":00");
+
+        System.out.println("**********");
+        System.out.println();
+
     }
 
 
