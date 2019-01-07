@@ -26,6 +26,7 @@ public class TripPlanner {
 
         System.out.println("**********");
         System.out.println();
+
     }
 
     // takes in the days planned on the trip, allowance, and conversion info
@@ -94,7 +95,7 @@ public class TripPlanner {
 
     }
 
-    // Method to calculate distance between two locations
+    // Method to calculate distance between two locations using Haversine formula for two coordinates
     public static void measured_distance() {
         Scanner input = new Scanner(System.in);
         System.out.print("What is the longitude of your starting location? ");
@@ -106,8 +107,10 @@ public class TripPlanner {
         System.out.print("what is the latitude of your final destination? ");
         double final_lat = input.nextDouble();
 
+        // Earth radius in km
         double R = 6378137;
 
+        // Conversion of degrees to radians
         double lat_1 =  Math.toRadians(start_lat);
         double lat_2 =  Math.toRadians(final_lat);
         double lat_diff = Math.toRadians(final_lat - start_lat);
