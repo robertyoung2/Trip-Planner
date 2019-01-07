@@ -1,6 +1,6 @@
 # Trip-Planner
 
-A project as part of Microsoft's Java course on edX. 
+A project as part of Microsoft's Java course on edX. The source code for my completed implementation can be found [here](https://github.com/robertyoung2/Trip-Planner/blob/master/src/TripPlanner.java).
 
 The purpose of the project is to build a trip planner for a user that is broken down into a number of methods as follows:
 
